@@ -1,4 +1,4 @@
-package com.imook.web.config;
+package com.imooc.web.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.imook.filter.TimeFilter;
-import com.imook.interceptor.TimeInterceptor;
+import com.imooc.filter.TimeFilter;
+import com.imooc.interceptor.TimeInterceptor;
 
 @Configurable
 public class WebConfig extends WebMvcConfigurerAdapter{

@@ -1,4 +1,4 @@
-package com.imook.exception;
+package com.imooc.exception;
 
 public class UserNotExistException extends RuntimeException{
 

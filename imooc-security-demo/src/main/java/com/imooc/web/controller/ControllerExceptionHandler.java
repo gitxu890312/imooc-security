@@ -1,4 +1,4 @@
-package com.imook.web.controller;
+package com.imooc.web.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.imook.exception.UserNotExistException;
+import com.imooc.exception.UserNotExistException;
 /**
  * 异常处理controller
  * <p>Title: </p>

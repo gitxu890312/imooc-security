@@ -1,7 +1,5 @@
-package com.imook.dto;
+package com.imooc.dto;
 
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 @ToString

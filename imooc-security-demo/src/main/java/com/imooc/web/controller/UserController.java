@@ -1,4 +1,4 @@
-package com.imook.web.controller;
+package com.imooc.web.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.imook.dto.User;
-import com.imook.dto.UserQueryCondition;
+import com.imooc.dto.User;
+import com.imooc.dto.UserQueryCondition;
 
 /**
  * <p>Title: </p>

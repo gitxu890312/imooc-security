@@ -1,4 +1,4 @@
-package com.imook.interceptor;
+package com.imooc.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

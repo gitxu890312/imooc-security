@@ -1,4 +1,4 @@
-package com.imook.dto;
+package com.imooc.dto;
 
 import java.util.Date;
 
