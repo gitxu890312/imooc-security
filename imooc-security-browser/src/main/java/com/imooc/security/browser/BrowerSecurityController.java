@@ -53,10 +53,10 @@ public class BrowerSecurityController {
     public SimpleResponse requireAuthenticatoin(HttpServletRequest request,HttpServletResponse response) throws IOException {
         //获取引发跳转的请求
         SavedRequest saveReq = requestCache.getRequest(request, response);
-        if(saveReq!=null) {
+        if (saveReq != null) {
             String redirectUrl = saveReq.getRedirectUrl();
-            log.info("请求地址为："+redirectUrl);
-            if(StringUtils.endsWithIgnoreCase(redirectUrl, ".html")) {
+            log.info("请求地址为：" + redirectUrl);
+            if (StringUtils.endsWithIgnoreCase(redirectUrl, ".html")) {
                 redirectStratery.sendRedirect(request, response, securityProperties.getBrowser().getLoginPage());
             }
         }

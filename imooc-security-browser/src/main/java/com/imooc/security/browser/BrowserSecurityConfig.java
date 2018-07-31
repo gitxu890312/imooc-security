@@ -6,8 +6,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.imooc.security.core.properties.SecurityProperties;
+import com.imooc.security.core.validate.code.ValidateCodeFilter;
 
 @Configuration
 public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
@@ -18,10 +20,13 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
     private AuthenticationSuccessHandler imoocAuthenticationSuccessHandler;
     @Autowired
     private AuthenticationFailureHandler imoocAuthenticationFailerHandler;
-    
+    @Autowired//图形验证码过滤器
+    private ValidateCodeFilter validateCodeFilter;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin()
+        http
+        .addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class)
+        .formLogin()
        
 //        .loginPage("/imooc-signIn.html")//需要登录时跳转到指定页面
         .loginPage("/authentication/require")//需要认证时跳转到指定请求
@@ -32,7 +37,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
         .and()
         .authorizeRequests()
 //        .antMatchers("/imooc-signIn.html").permitAll()//登录页面权限设置
-        .antMatchers("/authentication/require",securityProperties.getBrowser().getLoginPage()).permitAll()//登录页面权限设置
+        .antMatchers("/authentication/require",securityProperties.getBrowser().getLoginPage(),"/code/image").permitAll()//登录页面权限设置
         
         .anyRequest().authenticated()
         .and().csrf().disable();//关闭跨站请求伪造
