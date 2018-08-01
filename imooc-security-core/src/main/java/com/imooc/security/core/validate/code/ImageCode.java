@@ -13,22 +13,16 @@ import java.time.LocalDateTime;
  * @author xuming
  * @since：2018年7月31日
  * @version v1.0
- *
+ * 图形验证码
  */
-public class ImageCode {
+public class ImageCode  extends ValidateCode {
 
     
     private BufferedImage image;
     
-    private String code;
-    
-    private LocalDateTime expireTime;
-
     public ImageCode(BufferedImage image, String code, int expireSeconds) {
-        super();
+        super(code,expireSeconds);
         this.image = image;
-        this.code = code;
-        this.expireTime = LocalDateTime.now().plusSeconds(expireSeconds);
     }
 
     public BufferedImage getImage() {
@@ -39,21 +33,8 @@ public class ImageCode {
         this.image = image;
     }
 
-    public String getCode() {
-        return code;
-    }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+  
 
-    public boolean isExpire() {
-        return LocalDateTime.now().isAfter(expireTime);
-    }
-
-    public void setExpireTime(LocalDateTime expireTime) {
-        this.expireTime = expireTime;
-    }
-    
     
 }

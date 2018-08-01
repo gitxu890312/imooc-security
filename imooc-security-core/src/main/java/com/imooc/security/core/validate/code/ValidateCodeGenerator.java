@@ -16,5 +16,5 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface ValidateCodeGenerator {
 
-    ImageCode createCode(HttpServletRequest request);
+    ValidateCode createCode(HttpServletRequest request);
 }

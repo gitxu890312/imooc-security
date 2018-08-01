@@ -9,11 +9,13 @@ import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.ServletRequestUtils;
 
 import com.imooc.security.core.properties.SecurityProperties;
-
+@Component
 public class ImageCodeGenerator implements ValidateCodeGenerator {
+    
     @Autowired
     private SecurityProperties securityProperties;
     @Override
