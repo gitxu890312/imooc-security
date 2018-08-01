@@ -1,4 +1,4 @@
-package com.imooc.security.core.validate.code;
+package com.imooc.security.core.validate.code.filter;
 
 import java.io.IOException;
 
@@ -17,6 +17,10 @@ import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.imooc.security.core.validate.code.ValidateCodeController;
+import com.imooc.security.core.validate.code.ValidateCodeException;
+import com.imooc.security.core.validate.code.bean.ImageCode;
 @Component
 public class ValidateCodeFilter extends OncePerRequestFilter {
 

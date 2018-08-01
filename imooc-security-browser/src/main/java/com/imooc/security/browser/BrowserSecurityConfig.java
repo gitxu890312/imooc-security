@@ -16,7 +16,8 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 
 import com.imooc.security.core.authentication.mobile.SmsCodeAuthenticationSecurityConfig;
 import com.imooc.security.core.properties.SecurityProperties;
-import com.imooc.security.core.validate.code.ValidateCodeFilter;
+import com.imooc.security.core.validate.code.filter.SmsValidateCodeFilter;
+import com.imooc.security.core.validate.code.filter.ValidateCodeFilter;
 
 @Configuration
 public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
@@ -30,7 +31,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired//图形验证码过滤器
     private ValidateCodeFilter validateCodeFilter;
     @Autowired
-    private ValidateCodeFilter smsValidateCodeFilter;
+    private SmsValidateCodeFilter smsValidateCodeFilter;
     @Autowired
     private UserDetailsService userDetailsService;
     @Autowired

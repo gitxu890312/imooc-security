@@ -1,6 +1,8 @@
-package com.imooc.security.core.validate.code;
+package com.imooc.security.core.validate.code.generator;
 
 import javax.servlet.http.HttpServletRequest;
+
+import com.imooc.security.core.validate.code.bean.ValidateCode;
 /**
  * 
  * <p>Title: </p>

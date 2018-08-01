@@ -1,4 +1,4 @@
-package com.imooc.security.core.validate.code;
+package com.imooc.security.core.validate.code.generator;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.ServletRequestUtils;
 
 import com.imooc.security.core.properties.SecurityProperties;
+import com.imooc.security.core.validate.code.bean.ImageCode;
 @Component
 public class ImageCodeGenerator implements ValidateCodeGenerator {
     

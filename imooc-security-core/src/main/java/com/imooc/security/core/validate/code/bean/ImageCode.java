@@ -1,7 +1,6 @@
-package com.imooc.security.core.validate.code;
+package com.imooc.security.core.validate.code.bean;
 
 import java.awt.image.BufferedImage;
-import java.time.LocalDateTime;
 /**
  * 图形验证码类
  * <p>Title: </p>

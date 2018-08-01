@@ -1,4 +1,4 @@
-package com.imooc.security.core.validate.code;
+package com.imooc.security.core.validate.code.filter;
 
 import java.io.IOException;
 
@@ -17,6 +17,10 @@ import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.imooc.security.core.validate.code.ValidateCodeController;
+import com.imooc.security.core.validate.code.ValidateCodeException;
+import com.imooc.security.core.validate.code.bean.ValidateCode;
 @Component
 public class SmsValidateCodeFilter extends OncePerRequestFilter {
 
@@ -40,7 +44,7 @@ public class SmsValidateCodeFilter extends OncePerRequestFilter {
     }
 
     private void validateCode(ServletWebRequest request) throws ServletRequestBindingException {
-        ImageCode codeInSession = (ImageCode) sessionStrategy.getAttribute(request, ValidateCodeController.SESSION_SMS_KEY);
+        ValidateCode codeInSession = (ValidateCode) sessionStrategy.getAttribute(request, ValidateCodeController.SESSION_SMS_KEY);
 
         String codeInRequest = ServletRequestUtils.getStringParameter(request.getRequest(), "smsCode");
 

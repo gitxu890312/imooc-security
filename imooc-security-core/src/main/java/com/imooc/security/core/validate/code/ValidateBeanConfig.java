@@ -4,6 +4,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.imooc.security.core.validate.code.generator.ImageCodeGenerator;
+
 @Configuration
 public class ValidateBeanConfig {
 

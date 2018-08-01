@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.ServletWebRequest;
 
+import com.imooc.security.core.validate.code.bean.ImageCode;
+import com.imooc.security.core.validate.code.bean.ValidateCode;
+import com.imooc.security.core.validate.code.generator.ImageCodeGenerator;
+import com.imooc.security.core.validate.code.generator.SmsCodeGenerator;
 import com.imooc.security.core.validate.code.sender.SmsCodeSender;
 
 @RestController
