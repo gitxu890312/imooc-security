@@ -68,7 +68,9 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
             
             .apply(smsCodeAuthenticationSecurityConfig);
     }
-    @Bean
+    
+    
+    @Bean//记住我功能dao
     public PersistentTokenRepository persistentTokenRepository() {
         JdbcTokenRepositoryImpl token = new JdbcTokenRepositoryImpl();
         token.setDataSource(dataSource);
